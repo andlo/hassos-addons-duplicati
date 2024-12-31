@@ -22,7 +22,8 @@ RUN apt-get update && apt-get install -y gnupg2 wget
 #    apt-get install mono-devel apt-transport-https nano git-core software-properties-common dirmngr -y
 
 # DOWNLOAD FROM DUPLICATI
-RUN wget https://updates.duplicati.com/beta/duplicati_${DUPLICATI_VERSION}_all.deb && \
+#https://updates.duplicati.com/beta/duplicati-2.1.0.2_beta_2024-11-29-linux-x64-gui.deb
+RUN wget https://updates.duplicati.com/beta/duplicati_${DUPLICATI_VERSION}_beta_2024-11-29-linux-x64-gui.deb && \
     apt install ./duplicati_${DUPLICATI_VERSION}_all.deb -y
 
 # Copy root filesystem
