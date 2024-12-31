@@ -28,7 +28,7 @@ RUN apt-get update && \
 # DOWNLOAD FROM DUPLICATI
 #https://updates.duplicati.com/beta/duplicati-2.1.0.2_beta_2024-11-29-linux-x64-gui.deb
 RUN wget https://updates.duplicati.com/beta/duplicati_${DUPLICATI_VERSION}_beta_2024-11-29-linux-x64-gui.deb && \
-    apt install ./duplicati_${DUPLICATI_VERSION}_all.deb -y
+    apt install ./duplicati_${DUPLICATI_VERSION}_beta_2024-11-29-linux-x64-gui.deb -y
 
 # Copy root filesystem
 COPY rootfs /
