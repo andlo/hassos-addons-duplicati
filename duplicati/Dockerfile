@@ -21,6 +21,10 @@ RUN apt-get update && apt-get install -y gnupg2 wget
 #RUN apt-get update && \
 #    apt-get install mono-devel apt-transport-https nano git-core software-properties-common dirmngr -y
 
+RUN apt-get update && \
+    apt-get install apt-transport-https nano git-core software-properties-common dirmngr -y
+
+
 # DOWNLOAD FROM DUPLICATI
 #https://updates.duplicati.com/beta/duplicati-2.1.0.2_beta_2024-11-29-linux-x64-gui.deb
 RUN wget https://updates.duplicati.com/beta/duplicati_${DUPLICATI_VERSION}_beta_2024-11-29-linux-x64-gui.deb && \
