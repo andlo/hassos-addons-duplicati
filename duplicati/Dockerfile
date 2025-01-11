@@ -15,15 +15,19 @@ RUN if dpkg --print-foreign-architectures | grep -q armhf; then \
 
 RUN apt-get update && apt-get install -y gnupg2 wget
 
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
-    echo "deb http://download.mono-project.com/repo/debian buster main" | tee /etc/apt/sources.list.d/mono-official.list
+#RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
+#    echo "deb http://download.mono-project.com/repo/debian buster main" | tee /etc/apt/sources.list.d/mono-official.list
 
-RUN apt-get update && \
-    apt-get install mono-devel apt-transport-https nano git-core software-properties-common dirmngr -y
+#RUN apt-get update && \
+#    apt-get install mono-devel apt-transport-https nano git-core software-properties-common dirmngr -y
 
 # DOWNLOAD FROM DUPLICATI
-RUN wget https://updates.duplicati.com/beta/duplicati_${DUPLICATI_VERSION}_all.deb && \
-    apt install ./duplicati_${DUPLICATI_VERSION}_all.deb -y
+#RUN wget https://updates.duplicati.com/beta/duplicati_${DUPLICATI_VERSION}_all.deb && \
+#    apt install ./duplicati_${DUPLICATI_VERSION}_all.deb -y
+RUN wget https://updates.duplicati.com/beta/duplicati-2.1.0.2_beta_2024-11-29-linux-x64-gui.deb && \
+    apt install ./duplicati-2.1.0.2_beta_2024-11-29-linux-x64-gui.deb -y
+
+#    https://updates.duplicati.com/beta/duplicati-2.1.0.2_beta_2024-11-29-linux-x64-gui.deb
 
 # Copy root filesystem
 COPY rootfs /
